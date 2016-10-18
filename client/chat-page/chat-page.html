@@ -1,0 +1,42 @@
+<!-- Top level template for the chat page -->
+<template name="chat_page">
+<div class="row">
+    <div class="col-md-12">
+        <div class="">
+            {{#each messages}}
+                {{> chat_message}}
+            {{/each}}
+        </div>
+    </div>
+</div>
+<div class="row" id="chatbox">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="panel-title">
+                Type your message below:
+                   <span
+                        data-container="body"
+                        data-toggle="popover"
+                        data-placement="top"
+                    data-content="Use emoticons! <a href='http://emoji.codes' target='_blank'>Search here</a> for their shortnames (try <em>:smile:</em> for example)"
+                        data-original-title=""
+                        title=""
+                        class="pull-right glyphicon glyphicon-question-sign"></span>
+            </div>
+        </div>
+        <div class="panel-body">
+            <form class="js-send-chat">
+                <!-- <div class="col-xs-11"> -->
+                <textarea name="chat"
+                    id="type-message"
+                    placeholder="type a message here..."
+                    cols="40"></textarea>
+                <!-- </div> -->
+                <!-- <div class="col-xs-1"> -->
+                <button class="btn btn-info pull-right">send</button>
+                <!-- </div> -->
+            </form>
+        </div>
+    </div>
+</div>
+</template>

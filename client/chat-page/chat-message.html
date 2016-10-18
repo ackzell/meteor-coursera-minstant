@@ -1,0 +1,30 @@
+<!-- simple template that displays a message -->
+<template name="chat_message">
+    <div class="row panel panel-default">
+        {{#if isMyUser who}}
+            <div class="panel-body bg-primary">
+                <div class="col-xs-10">
+                    <div class="user-name text-right">me <span class="when text-right text-muted">{{when}}</span></div>
+                    {{#emojione}}
+                        <div class="message-text">{{{text}}}</div>
+                    {{/emojione}}
+                </div>
+                <div class="col-xs-2">
+                    <img src="/{{avatar}}" alt="avatar-{{avatar}}" class="img-rounded avatar_img">
+                </div>
+            </div>
+        {{else}}
+           <div class="panel-body">
+                <div class="col-xs-2">
+                   <img src="/{{avatar}}" alt="avatar-{{avatar}}" class="img-rounded avatar_img">
+               </div>
+               <div class="col-xs-10">
+                   <div class="user-name">{{username}} <span class="when text-muted">{{when}}</span></div>
+                    {{#emojione}}
+                        <div class="message-text">{{{text}}}</div>
+                    {{/emojione}}
+               </div>
+           </div>
+        {{/if}}
+    </div>
+</template>

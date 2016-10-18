@@ -1,0 +1,32 @@
+<!-- display an individual user -->
+<template name="available_user">
+    <div class="col-md-2">
+        <div class="user_avatar panel panel-default">
+            {{#if isMyUser _id}}
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <span>{{getUsername _id}} (YOU)</span>
+                </div>
+            </div>
+            <div class="panel-body">
+                <img src="/{{profile.avatar}}" class="avatar_img img-rounded">
+            </div>
+            {{else}}
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <span>
+                        <a href="/chat/{{_id}}">
+                            {{getUsername _id}}
+                        </a>
+                    </span>
+                </div>
+            </div>
+            <div class="panel-body">
+                <a href="/chat/{{_id}}">
+                    <img src="/{{profile.avatar}}" class="avatar_img img-rounded">
+                </a>
+            </div>
+            {{/if}}
+        </div>
+    </div>
+</template>
